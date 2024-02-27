@@ -1,4 +1,5 @@
 # Reddit Reader
+Create a Reddit app here https://old.reddit.com/prefs/apps/ and create a .env file in the root of the repo with CLIENT_ID and CLIENT_SECRET from the app you just made.
 ## How to programmatically REQUEST data
 To request data, you'll need to implement the RedditReader stub through grcp. You'll then call the GetRedditPost function with one of two parameters. `post_url` will return the title and body of the respective post while `post_id` will return the same based on the post's ID. If both parameters are provided, it will default to the post url.
 Python Example:
