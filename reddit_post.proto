@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package reddit_post;
+
+service RedditReader {
+    rpc GetRedditPost (RedditPostRequest) returns (RedditPostResponse) {}
+}
+
+message RedditPostRequest {
+    optional string post_url = 1;
+    optional string post_id = 2;
+}
+
+message RedditPostResponse {
+    string title = 1;
+    string body = 2;
+}

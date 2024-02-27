@@ -1,0 +1,18 @@
+//https://sequencediagram.org/
+title Reddit Reader Microservice ULM Diagram
+
+participant Program Making a Request
+participant gRPC
+participant Reddit Reader Microservice
+participant Reddit
+
+
+loop
+gRPC<-Reddit Reader Microservice:Listen for new function call
+end
+Program Making a Request->gRPC:Send URL and/or post id
+
+Reddit Reader Microservice->Reddit:Request post from Reddit
+Reddit Reader Microservice<-Reddit:Return post data\n
+gRPC<-Reddit Reader Microservice:Send back object with title and body
+Program Making a Request->gRPC:Read response
